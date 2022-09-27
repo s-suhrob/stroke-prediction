@@ -105,6 +105,8 @@ def stroke_run():
                 col1, col2 = st.columns(2)
                 with col1:
                     st.metric('Точность предсказание (модели)', value=0.94)
+                with col2:
+                    st.metric('AUC',value=0.78)
                     
                 st.header('Презсказание модели на ваших данных')
                 model_output = rf_pipeline.predict_proba(pred_data)
