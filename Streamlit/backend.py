@@ -111,3 +111,6 @@ def stroke_run():
                 st.header('Презсказание модели на ваших данных')
                 model_output = rf_pipeline.predict_proba(pred_data)
                 st.write(model_output)
+                print(model_output)
+                for thres in [x / 100 for x in range(5, 31, 5)]:
+                    print(thres)
