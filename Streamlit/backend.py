@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 
 
 
-rf_pipeline = joblib.load("model_files/rf_pipeline.joblib") #loading model 
+rf_pipeline = joblib.load("models/rf_pipeline.joblib") #loading model 
 
 
 
