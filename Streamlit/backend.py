@@ -17,7 +17,7 @@ def stroke_run():
     
     st.set_page_config(layout='wide')
 
-    st.title('Пресказание инсульта с помощью машинного обучения')
+    st.title('Предсказание инсульта с помощью ИИ')
 
     # age = st.text_input('Ваш возраст', value='18')
     age = st.number_input(label='Ваш возраст', min_value=18, max_value=80)
@@ -115,10 +115,10 @@ def stroke_run():
                 col3, col4 = st.columns(2)
                 if model_prediction <= 0.5:
                     with col3:
-                        st.metric('Вероятность получния унсульта', value='Низкий')
+                        st.metric('Вероятность получния инсульта', value='Низкий')
                 elif model_prediction <=0.8 or model_prediction > 0.5:
                     with col3:
-                        st.metric('Вероятность получния унсульта', value='Средний')
+                        st.metric('Вероятность получния инсульта', value='Средний')
                 elif model_prediction > 0.8:
                     with col3:
-                        st.metric('Вероятность получния унсульта', value='Высокий')
+                        st.metric('Вероятность получния инсульта', value='Высокий')
