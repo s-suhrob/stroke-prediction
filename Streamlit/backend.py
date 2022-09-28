@@ -110,7 +110,17 @@ def stroke_run():
                     
                 st.header('Презсказание модели на ваших данных')
                 model_output = rf_pipeline.predict_proba(pred_data)
-                st.write(model_output)
-                print(model_output)
-                for thres in [x / 100 for x in range(5, 31, 5)]:
-                    print(thres)
+                model_prediction = rf_pipeline.predict_proba(pred_data)[0][1]
+                # st.write(model_output)
+                col3, col4 = st.columns(2)
+                if model_prediction <= 0.5:
+                    with col3:
+                        st.metric('Вероятность получния унсульта', value='Низкий')
+                elif model_prediction <=0.8 or model_prediction > 0.5:
+                    with col3:
+                        st.metric('Вероятность получния унсульта', value='Средний')
+                elif model_prediction > 0.8:
+                    with col3:
+                        st.metric('Вероятность получния унсульта', value='Высокий')
+                    
+                # print(model_output)
