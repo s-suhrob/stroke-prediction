@@ -122,5 +122,3 @@ def stroke_run():
                 elif model_prediction > 0.8:
                     with col3:
                         st.metric('Вероятность получния унсульта', value='Высокий')
-                    
-                # print(model_output)
