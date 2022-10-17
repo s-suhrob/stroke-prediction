@@ -108,7 +108,7 @@ def stroke_run():
                 with col2:
                     st.metric('AUC',value=0.78)
                     
-                st.header('Презсказание модели на ваших данных')
+                st.header('Прогнозирование модели по вашим данным')
                 model_output = rf_pipeline.predict_proba(pred_data)
                 model_prediction = rf_pipeline.predict_proba(pred_data)[0][1]
                 # st.write(model_output)
